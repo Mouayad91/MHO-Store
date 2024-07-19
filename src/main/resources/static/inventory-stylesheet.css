@@ -1,0 +1,178 @@
+body {
+  font-family: 'Roboto', sans-serif; 
+  background: #0a0a0a url('path-to-animated-bg.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #eee;
+  animation: backgroundFade 10s infinite alternate;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, 0%);
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+} 
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  position: relative;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table .head {
+  position: relative;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+table .head th {
+  background-color: #00ff00;
+  border: 0.5px solid black;
+  font-size: 1.25em;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+}
+
+table th {
+  display: table-cell;
+}
+
+table th, td {
+  padding: 0.75em;
+}
+
+table tbody {
+  display: table-row-group;
+}
+
+table tbody td {
+  text-align: right;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 1em;
+  color: #ddd;
+}
+
+table tbody td[type=currency], td[type=date] {
+  text-align: right;
+}
+
+table tbody td[type=currency]:before {
+  content: "$";
+}
+
+.table-button {
+  cursor: pointer;
+  float: left;
+  border: solid 1px gray;
+  width: 80%;
+  background-color: #00cc00;
+  font-size: 1em;
+  text-decoration: none;
+  padding: 0.5em;
+  font-family: 'Roboto', sans-serif;
+  margin: 0.5em;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.table-button:hover {
+  background-color: #ff0000;
+  transform: scale(1.05);
+}
+
+.topnav {
+  background-color: #111;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+}
+
+.topnav a:hover {
+  background-color: #00ccff;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #00ff00;
+  color: white;
+}
+
+.alert {
+  position: relative;
+  top: 2%;
+  padding: 30px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.alert.success {
+  background-color: #04AA6D;
+}
+
+@keyframes backgroundFade {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* Particle animation */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path-to-particle-animation.gif') repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 1em;
+  }
+  .topnav a {
+    font-size: 1.25em;
+  }
+  table .head th, table tbody td {
+    font-size: 1em;
+  }
+  .table-button {
+    width: 90%;
+  }
+}

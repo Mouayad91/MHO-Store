@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/form-stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" th:href="@{/}">Game Store</a>
+        <a th:href="@{/inventory}">Inventory</a>
+    </div>
+    <div class="container">
+        <h2>MHO Game Store</h2>
+        <form method="post" th:object="${games}" th:action="@{/submit}">
+           
+            <p style="color: red;" th:errors="*{category}"></p>
+            
+            <select class="select" th:field="*{category}">
+                <option style="color:blue" value="">Choose Genre</option>
+            
+                <option style="color:blue" value="Action">Action</option>
+
+                <option style="color:blue" value="Adventure">Adventure</option>
+
+                <option style="color:blue" value="RPG">RPG</option>
+
+                <option style="color:blue" value="Simulation">Simulation</option>
+
+                <option style="color:blue" value="Sport">Sport</option>
+
+                <option style="color:blue" value="Puzzle">Puzzle</option>
+
+
+            </select>
+            <p style="color: red;" th:errors="*{title}"></p>
+
+            <input type="text" placeholder="Game Title" th:field="*{title}">
+            <p style="color: red;" th:errors="*{price}"></p>
+            <p style="color: red;" th:errors="*{discount}"></p>
+
+            <input class="half" type="text" placeholder="Price" th:field="*{price}">
+            <input class="half" type="text" placeholder="Discount" th:field="*{discount}">
+           
+            <h4>Release Date</h4>
+            <p style="color: red;" th:errors="*{date}"></p>
+            <input type="date" id="date" th:field="*{date}"/><br/>
+            
+            <input type="hidden"  th:field="*{id}"/><br/>
+
+           
+            <input type="submit" value="Add Game">
+        </form>
+    </div>
+</body>
+</html>

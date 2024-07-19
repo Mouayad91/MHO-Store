@@ -1,0 +1,146 @@
+body {
+  font-family: 'Roboto', sans-serif; 
+  background: #0a0a0a url('path-to-animated-bg.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #eee;
+  animation: backgroundFade 10s infinite alternate;
+  margin: 0;
+  padding: 0;
+}     
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  width: 90%;
+  max-width: 600px;
+} 
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2em;
+  font-weight: 600;  
+  text-align: center;
+  margin-bottom: 8%;
+  color: #00ffff;
+  text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.7);
+}
+
+form input, select {
+  padding: 0.75em 1em;
+  appearance: none;
+  line-height: normal;
+  border: none;
+  margin-bottom: 4.5%;
+  font: inherit;
+  width: 100%;
+  background: #222;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+input[type=submit] {
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  font-size: 1.25em;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+input[type=submit]:hover {
+  background: linear-gradient(45deg, #ff0000, #cc0000); 
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+form {
+  max-width: 30em;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end; 
+}
+
+form .half {
+  width: calc(50% - 1px); 
+}
+
+input[type=date] {
+  background-color: #444;
+  border: 1px solid #888;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+html {
+  -webkit-font-smoothing: antialiased; 
+}
+
+.topnav {
+  background-color: #111;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+}
+
+.topnav a:hover {
+  background-color: #00ccff;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #00ff00;
+  color: white;
+}
+
+@keyframes backgroundFade {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* Particle animation */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path-to-particle-animation.gif') repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 1em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .topnav a {
+    font-size: 1.25em;
+  }
+}

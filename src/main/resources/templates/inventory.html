@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/inventory-stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="topnav">
+        <a th:href="@{/}">Game Store</a>
+        <a class="active" th:href="@{/inventory}">Inventory</a>
+    </div>
+
+    <div class="alert success" th:if="${status} == 'success'">
+      <Strong>Game submited successfully</Strong>
+    </div>
+
+    <div class="alert" th:if="${status} == 'failed'">
+      <Strong>Game failed to submit</Strong>
+    </div>
+
+    <div class="container">
+        <table>
+            <tr class="head">
+                <th>Genre</th>
+                <th>Game Title</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Release Date</th>
+                <th></th>
+            </tr>
+            <tr th:each="game : ${games}">
+                <td th:text="${game.category}">Action</td>
+                <td th:text="${game.title}">Kingdom of zula</td>
+                <td  th:text="${#numbers.formatCurrency(game.price)}">59.99</td>
+                <td  th:text="${#numbers.formatCurrency(game.discount)}">49.99</td>
+                <td th:text="${#temporals.format(game.date, 'yyyy-MM-dd')}">2023-11-11</td>
+                <td>
+                    <a role="button" style="color:white; background-color: #263238" class="table-button" th:href="@{/(id = ${game.id})}">Update</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
