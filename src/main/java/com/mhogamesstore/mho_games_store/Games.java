@@ -25,6 +25,7 @@ public class Games {
     @Min(value = 0 ,message = "Discount can not be negative")
     private Double discount;
    
+    @NotNull(message = "Please select a release date")
     @Past(message = "Date must be in the past")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
    
