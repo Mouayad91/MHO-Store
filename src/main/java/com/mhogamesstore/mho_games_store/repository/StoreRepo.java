@@ -3,8 +3,11 @@ package com.mhogamesstore.mho_games_store.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.mhogamesstore.mho_games_store.Games;
 
+@Repository
 public class StoreRepo {
     
    private List<Games> games = new ArrayList<>();

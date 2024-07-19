@@ -3,13 +3,19 @@ package com.mhogamesstore.mho_games_store.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.mhogamesstore.mho_games_store.Constants;
 import com.mhogamesstore.mho_games_store.Games;
 import com.mhogamesstore.mho_games_store.repository.StoreRepo;
 
+
+@Service
 public class StoreService {
-  
-    StoreRepo storeRepo = new StoreRepo();
+    
+    @Autowired
+    StoreRepo storeRepo;
 
     public Games getGame(int index){
 
