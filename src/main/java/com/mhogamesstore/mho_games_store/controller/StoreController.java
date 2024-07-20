@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.mhogamesstore.mho_games_store.Games;
+import com.mhogamesstore.mho_games_store.POJO.Games;
 import com.mhogamesstore.mho_games_store.service.StoreService;
 
 import jakarta.validation.Valid;
@@ -22,8 +22,11 @@ public class StoreController {
 
     @GetMapping("/")
     public String getForm(Model model, @RequestParam(required = false) String id) {
-       
-        model.addAttribute("games", storeService.getGameFromId(id) );
+        Games game = storeService.getGameFromId(id);
+        if (game == null) {
+            game = new Games(id, id, 0, 0, null); 
+        }
+        model.addAttribute("games", game);
         return "form";
     }
 

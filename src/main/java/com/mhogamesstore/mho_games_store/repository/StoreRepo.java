@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.mhogamesstore.mho_games_store.Games;
+import com.mhogamesstore.mho_games_store.POJO.Games;
 
 @Repository
 public class StoreRepo {

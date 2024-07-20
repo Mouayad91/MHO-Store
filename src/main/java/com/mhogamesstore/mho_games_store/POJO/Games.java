@@ -1,4 +1,4 @@
-package com.mhogamesstore.mho_games_store;
+package com.mhogamesstore.mho_games_store.POJO;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -35,6 +35,10 @@ public class Games {
 public Games(String string, String string2, double d, double e, LocalDate localDate){
 
     this.id=UUID.randomUUID().toString();
+}
+
+
+public Games() {
 }
 
 
