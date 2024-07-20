@@ -32,10 +32,22 @@ public class Games {
     private LocalDate date;
     private String id;
 
-public Games(){
+public Games(String string, String string2, double d, double e, LocalDate localDate){
 
     this.id=UUID.randomUUID().toString();
 }
+
+
+public Games(String category, String title, Double price, Double discount, LocalDate date) {
+    this.category = category;
+    this.title = title;
+    this.price = price;
+    this.discount = discount;
+    this.date = date;
+    this.id = UUID.randomUUID().toString();
+}
+
+
 
 
     public String getCategory() {
